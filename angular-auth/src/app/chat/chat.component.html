@@ -1,0 +1,37 @@
+<div style="width: 100%; display: flex;">
+    <div
+        style="margin-left: 5%; margin-top: 5%; border: solid 2px rgb(185, 185, 185); width: 140px; height: 180px;background-color: rgb(185, 185, 185);">
+        <img style="width: 140px; height: 140px;"
+            src="https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png"
+            id="--" />
+        <div style="padding: 3px;">
+            card.username
+        </div>
+    </div>
+    <div style="float: right;width: 80%; padding: 10px; margin-left: 20px;">
+        <div style="margin-top: 5%; width: 100%; display: flex;">
+            <div style="border: solid 1px rgb(181, 181, 181); padding: 5px;">
+                Message: <input
+                    style="border: solid 1px rgb(181, 181, 181); background-color: rgb(204, 204, 204);padding: 3px; width: 57%;"
+                    placeholder="=)" />
+                <img (click)="sendMessage()" style="margin-left: 5px; margin-bottom: -5px; width: 20px;"
+                    src="https://cdn-icons-png.flaticon.com/512/736/736212.png" id="--" />
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <table>
+                <tr>
+                    <td style="width: 70%;"><b>Message</b></td>
+                    <td style="width: 15%;"><b>Date</b></td>
+                    <td style="width: 15%;"><b>From</b></td>
+                </tr>
+                <tr *ngFor="let msg of messages">
+                    <td>{{msg.content}}</td>
+                    <td>{{msg.date}}</td>
+                    <td>{{msg.from}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

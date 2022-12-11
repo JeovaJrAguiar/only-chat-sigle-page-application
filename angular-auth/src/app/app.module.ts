@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { GridCardsComponent } from './grid-cards/grid-cards.component';
 import { CardComponent } from './card/card.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CardComponent } from './card/card.component';
     RegisterComponent,
     HomeComponent,
     GridCardsComponent,
-    CardComponent
+    CardComponent,
+    ChatComponent
   ],
   imports: [
     HttpClientModule,

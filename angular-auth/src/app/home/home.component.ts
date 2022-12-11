@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from '../storage.service';
-import { GridCardsComponent } from '../grid-cards/grid-cards.component';
+import { Card } from '../card'; 
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,13 @@ import { GridCardsComponent } from '../grid-cards/grid-cards.component';
 })
 export class HomeComponent implements OnInit {
   nameOrMail: string = '';
-
+  cards : Card[] = [
+    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
+    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
+    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
+    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'}
+  ];
+  
   constructor(
     //private homeService: homeService,
     private router: Router,
@@ -32,4 +38,11 @@ export class HomeComponent implements OnInit {
     }
     
   }
+
+  chat(){
+    this.router.navigate(['/chat']);
+  }
+  /*getUserByUsername(string username){
+    this.router.navigate(['/dashboard']);
+  }*/
 }
