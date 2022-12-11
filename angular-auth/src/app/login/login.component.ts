@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       console.log('USER/ME: ');
       console.log(user);
       this.localStorage.set('authorization', btoa(this.username + ':' + this.password));
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
     }, (error) => {
       this.loginFailMessage = 'Usuario ou senha invalidos. Tente novamente';
     });

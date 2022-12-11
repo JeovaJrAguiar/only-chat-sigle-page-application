@@ -18,5 +18,4 @@ export class LoginService {
     );
     return this.http.get<Object>(this.API_USER_ME, {headers: headers});
   }
-
 }

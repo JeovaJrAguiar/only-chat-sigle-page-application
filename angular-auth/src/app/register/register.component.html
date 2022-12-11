@@ -1,0 +1,21 @@
+Mail <br>
+<input [(ngModel)]="mail" type="text" /><br/>
+Name: <br>
+<input [(ngModel)]="name" type="text"/><br/>
+
+Gender: <br>
+<select [(ngModel)]="gender" name="gender" type="text">
+    <option value="Male" selected>Male</option>
+    <option value="Female">Female</option>
+</select><br>
+
+Link of your photo: <br>
+<input [(ngModel)]="photo" type="text"/><br/>
+
+Password: <br>
+<input [(ngModel)]="password" type="password"/><br/>
+Please, write your password again: <br>
+<input [(ngModel)]="confirmation" type="password"/><br/>
+
+<a style="color: red;">{{registerFailMessage}}</a><br>
+<button (click)="register()">Register</button>
