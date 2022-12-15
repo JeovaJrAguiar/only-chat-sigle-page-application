@@ -3,8 +3,10 @@ package br.ufc.web.springrest01.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+//@Table
 public class UserAccount {
     
     @Id
@@ -13,12 +15,29 @@ public class UserAccount {
     private String username;
     private String password;
     private String fullname;
+    private String mail;
+    private String photo;
+    private String gender;
 
-    public UserAccount(String username, String password, String fullname){
+    public UserAccount(){
+    }
+
+    public UserAccount(String username, String password, String fullname, String mail, String photo, String gender){
         this.password = password;
         this.username = username;
         this.fullname = fullname;
+        this.mail = mail;
+        this.photo = photo;
+        this.gender = gender;
     }
+    
+    public String getGender() {
+        return gender;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 
     public String getFullname() {
         return fullname;
@@ -45,6 +64,22 @@ public class UserAccount {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getMail(){
+        return mail;
+    }
+
+    public void setMail(String mail){
+        this.mail = mail;
+    }
+
+    public String getPhoto(){
+        return photo;
+    }
+    public void setPhoto(String photo){
+        this.photo = photo;
+    }
+    
     /*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
