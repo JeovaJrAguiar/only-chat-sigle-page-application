@@ -1,11 +1,10 @@
 <h2>Login</h2>
 <a style="color: red;">{{loginFailMessage}}</a><br/>
 
-Login: <br>
-<input [(ngModel)]="username" type="text" /><br/>
+Mail: <br>
+<input [(ngModel)]="mail" type="text" /><br/>
 Password: <br>
 <input [(ngModel)]="password" type="password"/><br/>
 
-<button (click)="login()">Login</button> <br>
+<button (click)=login()>Login</button> <br>
 <a routerLink="/register">Não tenho conta, quero me cadastrar</a>
-<a routerLink="/home">Não tenho conta, quero me cadastrar</a>
