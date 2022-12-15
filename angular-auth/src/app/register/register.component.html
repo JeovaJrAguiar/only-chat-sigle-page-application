@@ -2,6 +2,8 @@ Mail <br>
 <input [(ngModel)]="mail" type="text" /><br/>
 Name: <br>
 <input [(ngModel)]="name" type="text"/><br/>
+FullName: <br>
+<input [(ngModel)]="fullname" type="text"/><br/>
 
 Gender: <br>
 <select [(ngModel)]="gender" name="gender" type="text">
@@ -19,3 +21,5 @@ Please, write your password again: <br>
 
 <a style="color: red;">{{registerFailMessage}}</a><br>
 <button (click)="register()">Register</button>
+
+{{messageReturn}}

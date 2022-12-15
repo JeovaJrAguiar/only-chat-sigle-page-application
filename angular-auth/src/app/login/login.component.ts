@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   loginFailMessage: string = '';
+  mail: string = '';
 
   constructor(private loginService: LoginService,
     private router: Router,
@@ -23,14 +24,21 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log('login - ' + this.username + ':' + this.password);
-    this.loginService.login(this.username, this.password).subscribe((user) => {
-      console.log('USER/ME: ');
-      console.log(user);
-      this.localStorage.set('authorization', btoa(this.username + ':' + this.password));
-      this.router.navigate(['/home']);
+    if (!this.password || !this.mail){
+        this.loginFailMessage = 'A camp empthy.';
+        this.router.navigate(['/login']);
+    }
+
+    this.loginService.login(this.mail, this.password).subscribe((user) => {
+      if(user.password == this.password){
+        this.localStorage.set('authorization', this.mail + ':' + this.password);
+        this.router.navigate(['/home']);
+      }else {
+        this.loginFailMessage = "Error, user or password invalid. Reapeat login.";
+        this.router.navigate(['/login']);
+      }
     }, (error) => {
-      this.loginFailMessage = 'Usuario ou senha invalidos. Tente novamente';
+      this.loginFailMessage = "Error, user or password invalid. Reapeat login.";
     });
   }
 }
