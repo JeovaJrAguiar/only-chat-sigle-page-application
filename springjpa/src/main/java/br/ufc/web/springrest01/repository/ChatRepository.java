@@ -11,9 +11,12 @@ import br.ufc.web.springrest01.model.Chat;
 @Repository
 public interface ChatRepository extends CrudRepository<Chat, Integer>{
 
-    
     @Query(value = "select * from chat where id = :id", nativeQuery = true)
     Optional<Chat> findChatById(int id);
+    
+
+    @Query(value = "select * from chat where (sender_user_id = :user and recipient_user_id = :user_rem) or (sender_user_id = :user_rem and recipient_user_id = :user)", nativeQuery = true)
+    Optional<Chat> findChatByUserIdAndUser_rem(int user, int user_rem);
 
 
     /*

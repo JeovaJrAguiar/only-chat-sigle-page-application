@@ -24,9 +24,11 @@ public class ChatRestController {
         return chatRepository.findChatById(id);
     }
 
-    @GetMapping("/{user}:{user_rem}")
-    Optional<Chat> getChatByUserAndUserRem(@PathVariable("user") String user, @PathVariable("user_rem") String user_rem){
-        retunr chatRepository.findChatByUserIdAndUser_rem();
+    @GetMapping("/{user}/{user_rem}")
+    Optional<Chat> getChatByUserAndUserRem(@PathVariable("user") int user, @PathVariable("user_rem") int user_rem){
+        return chatRepository.findChatByUserIdAndUser_rem(user, user_rem);
     }
+
+    
     
 }
