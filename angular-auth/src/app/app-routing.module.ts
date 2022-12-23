@@ -11,7 +11,7 @@ import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'chat', component: ChatComponent },
+  { path: 'chat/:mailUser/:mailUserRem', component: ChatComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'detail/:id', component: HeroDetailComponent },

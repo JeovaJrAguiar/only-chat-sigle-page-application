@@ -12,10 +12,10 @@
             <li>
                 <div style="border: solid 2px rgb(185, 185, 185); width: 140px; height: 180px;background-color: #fff;">
                     <img style="width: 140px; height: 140px;" 
-                        src="https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png" id="--"/>
+                        src="{{card.image}}" id="--"/>
                     <div style="padding: 3px;">
                             {{card.username}}
-                            <img (click)="chat()" style="margin-left: 5px; width: 20px;" src="https://cdn-icons-png.flaticon.com/512/1804/1804938.png" id="--"/>
+                            <img (click)="chat('{{card.mail}}')" style="margin-left: 5px; width: 20px;" src="https://cdn-icons-png.flaticon.com/512/1804/1804938.png" id="--"/>
                     </div>
                 </div>
             </li>

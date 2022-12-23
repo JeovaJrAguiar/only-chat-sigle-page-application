@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
   userPhoto: string = '';
 
   cards : Card[] = [
-    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
-    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
-    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'},
-    {username: 'igor', image:'https://cdn-icons-png.flaticon.com/512/2319/2319177.png', mail: 'asdfa@fad'}
+    {username: 'anna', image:'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
+    {username: 'carlos', image:'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
+    {username: 'eduarda', image:'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
+    {username: 'fernando', image:'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
+    {username: 'gabriela', image:'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'}
   ];
   
   constructor(
@@ -70,11 +71,10 @@ export class HomeComponent implements OnInit {
     }else{
       // chama funcao de filtra pelo nome
     }
-    
   }
 
-  chat(){
-    this.router.navigate(['/chat']);
+  chat(mailUserRem: String){
+    this.router.navigate(["/chat/" + this.userMail + "/" + mailUserRem]);
   }
   /*getUserByUsername(string username){
     this.router.navigate(['/dashboard']);

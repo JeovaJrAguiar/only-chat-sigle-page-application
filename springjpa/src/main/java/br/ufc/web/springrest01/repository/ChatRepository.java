@@ -19,12 +19,7 @@ public interface ChatRepository extends CrudRepository<Chat, Integer>{
     Optional<Chat> findChatByUserIdAndUser_rem(int user, int user_rem);
 
     @Query(value = "update chat set id = :id , chat= :chat, recipient_user_id = :recipient_user_id,sender_user_id = :sender_user_id WHERE id = id", nativeQuery = true)
-    void updateById(int id, String chat, int recipient_user_id, int sender_user_id);
-    //chat.getId(), chat.getChat(), chat.getRecipientUserId(), chat.getSenderUserId()
-
-
-    void updateChat(int id, String chat, int recipientUserId, int senderUserId);
-
+    void updateChatById(int id, String chat, int recipient_user_id, int sender_user_id);
 
     /*
     @Query(value = "select * from chat where username = :username", nativeQuery = true)

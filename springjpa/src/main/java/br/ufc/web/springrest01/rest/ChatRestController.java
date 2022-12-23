@@ -31,13 +31,12 @@ public class ChatRestController {
         return chatRepository.findChatByUserIdAndUser_rem(user, user_rem);
     }
 
-
     @PostMapping
     ChatDTO addChat(@RequestBody Chat chat){
         Optional<Chat> chatInDB = chatRepository.findChatByUserIdAndUser_rem(chat.getRecipientUserId(), chat.getSenderUserId());
         Chat savedChat = new Chat();
         if(chatInDB != null){
-            chatRepository.updateChat(chat.getId(), chat.getChat(), chat.getRecipientUserId(), chat.getSenderUserId());
+            chatRepository.updateChatById(chat.getId(), chat.getChat(), chat.getRecipientUserId(), chat.getSenderUserId());
         }else{
             savedChat = chatRepository.save(chat);
         }
