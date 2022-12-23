@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Message } from '../message';
 import { ChatService } from '../chat.service';
 import { HomeService } from '../home.service';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-chat',
@@ -29,11 +30,22 @@ export class ChatComponent implements OnInit {
     private route: ActivatedRoute,
     private chatService: ChatService,
     private homeService: HomeService,
-    private router: Router
+    private router: Router,
+    private localStorage: StorageService
   ) { }
 
   ngOnInit(): void {
-    const mailUser = String(this.route.snapshot.paramMap.get('userMail'));
+    this.loadUserRem();
+  
+  }
+
+  loadUserRem(){
+    // precisa carregar as informacoes de ambos os usuarios
+    var result = this.localStorage.get('authorization');
+
+
+
+    const mailUser = String(this.route.snapshot.paramMap.get('this.userMail'));
     const mailUserRem = String(this.route.snapshot.paramMap.get('mailUserRem'));
 
     this.userName = mailUser;
@@ -49,7 +61,6 @@ export class ChatComponent implements OnInit {
         this.userMail = result.mail,
         this.userPhoto = result.photo
     });
-  
   }
 
   sendMessage(){

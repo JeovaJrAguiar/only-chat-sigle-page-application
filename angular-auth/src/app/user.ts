@@ -5,4 +5,5 @@ export interface User {
     fullname: string;
     mail: string;
     photo: string;
+    gender: string;
 }

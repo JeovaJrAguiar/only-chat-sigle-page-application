@@ -6,6 +6,7 @@ import { MinValidator } from '@angular/forms';
 import { User } from '../user';
 import { HomeService } from '../home.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,13 +19,16 @@ export class HomeComponent implements OnInit {
   userName: string = '';
   userPhoto: string = '';
 
-  cards : Card[] = [
-    {username: 'anna', image:'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
-    {username: 'carlos', image:'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
-    {username: 'eduarda', image:'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
-    {username: 'fernando', image:'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'},
-    {username: 'gabriela', image:'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400', mail: 'andre@gmail.com'}
-  ];
+
+  /*
+      id: number;
+    username: string;
+    password: string;
+    fullname: string;
+    mail: string;
+    photo: string;
+  */
+  cards: User[] = [];
   
   constructor(
     private route: ActivatedRoute,
@@ -48,7 +52,22 @@ export class HomeComponent implements OnInit {
       this.userPhoto = authData[1];
 
       this.getUser();
+      this.loadGridCards(this.userMail);
+
     }
+  }
+
+  loadGridCards(userMail: string){
+    this.homeService.getUsers().subscribe(result => {
+      this.cards = this.cards.concat(result);
+    });
+
+    var index;
+    for (index = 0; index < this.cards.length; index++) {
+      if(this.cards[index].mail == userMail) return;
+    }
+
+    this.cards.splice(index, 1);
   }
 
   getUser(){
@@ -74,7 +93,7 @@ export class HomeComponent implements OnInit {
   }
 
   chat(mailUserRem: String){
-    this.router.navigate(["/chat/" + this.userMail + "/" + mailUserRem]);
+    this.router.navigate(["/chat/"+ this.userMail + "/" + mailUserRem]);
   }
   /*getUserByUsername(string username){
     this.router.navigate(['/dashboard']);

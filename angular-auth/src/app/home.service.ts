@@ -25,4 +25,8 @@ export class HomeService {
   getUser(mail: string) : Observable<User> {
     return this.http.get<User>(this.API_HOME_ME + '/' + mail);
   }
+
+  getUsers() : Observable<User> {
+    return this.http.get<User>(this.API_HOME_ME);
+  }
 }
