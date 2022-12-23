@@ -35,12 +35,13 @@ public class ChatRestController {
     @PostMapping
     ChatDTO addChat(@RequestBody Chat chat){
         Optional<Chat> chatInDB = chatRepository.findChatByUserIdAndUser_rem(chat.getRecipientUserId(), chat.getSenderUserId());
-        Chat savedChat = chatRepository.save(chat);
+        Chat savedChat = new Chat();
+        if(chatInDB != null){
+            chatRepository.updateChat(chat.getId(), chat.getChat(), chat.getRecipientUserId(), chat.getSenderUserId());
+        }else{
+            savedChat = chatRepository.save(chat);
+        }
 
-
-        user.setPassword(user.getPassword());
-        UserAccount savedUser = userRepository.save(user);
-
-        return new ChatDTO(savedChat.getId(), savedChat.getChat(), savedChat.getSenderUserId(), savedUser.getMail(),savedUser.getPhoto(), savedUser.getGender() );
+        return new ChatDTO(savedChat.getId(), savedChat.getSenderUserId(), savedChat.getRecipientUserId(), savedChat.getChat());
     }
 }
