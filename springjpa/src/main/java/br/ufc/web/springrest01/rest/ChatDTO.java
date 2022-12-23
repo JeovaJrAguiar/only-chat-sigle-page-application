@@ -9,7 +9,8 @@ public class ChatDTO {
     public ChatDTO() {
     }
 
-    public ChatDTO (int senderUserId, int recipientUserId, String chat){
+    public ChatDTO (int id, int senderUserId, int recipientUserId, String chat){
+        this.id = id;
         this.senderUserId = senderUserId;
         this.recipientUserId = recipientUserId;
         this.chat = chat;
@@ -21,6 +22,10 @@ public class ChatDTO {
 
     public void setChat(String chat) {
         this.chat = chat;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

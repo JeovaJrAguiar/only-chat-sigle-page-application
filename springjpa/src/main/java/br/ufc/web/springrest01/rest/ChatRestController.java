@@ -6,6 +6,8 @@ import java.util.OptionalInt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,16 @@ public class ChatRestController {
         return chatRepository.findChatByUserIdAndUser_rem(user, user_rem);
     }
 
-    
-    
+
+    @PostMapping
+    ChatDTO addChat(@RequestBody Chat chat){
+        Optional<Chat> chatInDB = chatRepository.findChatByUserIdAndUser_rem(chat.getRecipientUserId(), chat.getSenderUserId());
+        Chat savedChat = chatRepository.save(chat);
+
+
+        user.setPassword(user.getPassword());
+        UserAccount savedUser = userRepository.save(user);
+
+        return new ChatDTO(savedChat.getId(), savedChat.getChat(), savedChat.getSenderUserId(), savedUser.getMail(),savedUser.getPhoto(), savedUser.getGender() );
+    }
 }

@@ -23,6 +23,13 @@ public class Chat {
         this.chat = chat;
     }
 
+    public Chat (int id, int senderUserId, int recipientUserId, String chat){
+        this.id = id;
+        this.senderUserId = senderUserId;
+        this.recipientUserId = recipientUserId;
+        this.chat = chat;
+    }
+
     public String getChat() {
         return chat;
     }
