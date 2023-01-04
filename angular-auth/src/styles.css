@@ -12,11 +12,13 @@ h1 {
   }
   body {
     margin: 2em;
+    background-color: #f5f5f5;
   }
   body, input[type="text"], button {
     color: #333;
     font-family: Cambria, Georgia, serif;
   }
+
   button {
     background-color: #eee;
     border: none;

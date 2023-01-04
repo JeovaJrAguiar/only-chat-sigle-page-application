@@ -20,7 +20,6 @@ public class ChatRestController {
     @Autowired
     ChatRepository chatRepository;
 
-
     @GetMapping("/{id}")
     Optional<Chat> getChatById(@PathVariable("id") int id){
         return chatRepository.findChatById(id);

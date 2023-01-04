@@ -19,3 +19,11 @@ h1 {
   nav a:active {
     background-color: black;
   }
+
+#div-title{
+  text-align: center;
+  font-size: 32px;
+
+  padding-top: 20px;
+  padding-bottom: 30px;
+}

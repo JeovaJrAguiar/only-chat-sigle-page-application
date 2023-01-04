@@ -1,10 +1,49 @@
-<h2>Login</h2>
-<a style="color: red;">{{loginFailMessage}}</a><br/>
+<main class="text-center" >
+    <div class="form-signin w-100 m-auto">
+        <h2 class="h3 mb-3 fw-normal">Login</h2>
+        <a style="color: red;">{{loginFailMessage}}</a>
+        
+        <div class="form-floating">
+            <input [(ngModel)]="mail" id="floatingInput" class="form-control" type="email" placeholder="name@example.com"/>
+            <label for="floatingInput">Mail</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="password" id="floatingPassword" class="form-control" type="password" placeholder="name@example.com"/>
+            <label for="floatingPassword">Password</label>
+        </div>
+        
+        
+        <button (click)=login() class="w-100 btn btn-lg btn-primary">Login</button>
 
-Mail: <br>
-<input [(ngModel)]="mail" type="text" /><br/>
-Password: <br>
-<input [(ngModel)]="password" type="password"/><br/>
+        <label routerLink="/register">Don't have account, i want singup.</label>
+    </div>
+</main>
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24">
+                    <use xlink:href=""></use>
+                </svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">© 2022 Aguiar Software Engineer, Federal University of Ceara</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a href="#" class="text-muted">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="ms-3">
+                <a src="https://github.com/JeovaJrAguiar" class="text-muted">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+            </li>
 
-<button (click)=login()>Login</button> <br>
-<a routerLink="/register">Não tenho conta, quero me cadastrar</a>
+        </ul>
+    </footer>
+</div>
