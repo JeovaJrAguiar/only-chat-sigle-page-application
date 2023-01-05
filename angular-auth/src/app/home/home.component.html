@@ -7,6 +7,26 @@
     <img (click)="searchUserByNameOrMail()" style="margin-left: 5px; width: 20px;" src="https://cdn-icons-png.flaticon.com/512/2319/2319177.png" id="btnBusca"/>
 
     <br><br>
+
+    <div class="container px-4 py-5 container-cards" id="custom-cards">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <ul class="cards" *ngFor="let card of cards">
+                <li class="card-li">
+
+                    <div class="col" class="card-border">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('{{card.photo}}');">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 (click)="chat('andre@gmail.com')" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" class="h3-card-username">{{card.username}}</h3>
+                                <p (click)="chat('andre@gmail.com')">Start Chat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div style="background-color: #f2f2f2;margin-top: 30px; margin-left: 15%; margin-right: 15%; display: flex;">
         <ul class="cards" *ngFor="let card of cards">
             <li style="padding-right: 14px; list-style-type: none;">
