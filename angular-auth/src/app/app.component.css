@@ -27,3 +27,29 @@ h1 {
   padding-top: 20px;
   padding-bottom: 30px;
 }
+
+.footer-em-baixo{
+  bottom: 0;
+}
+
+.container-width{
+  width: 60% !important;
+}
+
+.card-adaptation-image{
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar{
+  display: flex;
+  width: 100%;
+  margin-left: 30% !important;
+}
+
+.navbar-search{
+  width: 50% !important;
+  height: 30px !important;
+}
