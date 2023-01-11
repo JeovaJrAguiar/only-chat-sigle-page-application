@@ -58,3 +58,9 @@ main {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.navbar-search{
+    width: 30% !important;
+    margin-left: 20% !important;
+    margin-top: 5%;
+}
