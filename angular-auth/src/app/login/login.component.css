@@ -60,15 +60,6 @@
 .h3, h3 {
     font-size: calc(1.3rem + .6vw);
 }
-
-main {
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #f5f5f5;
-}
-
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -78,3 +69,12 @@ main {
     margin-right: auto;
     margin-left: auto;
 }
+
+main {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
