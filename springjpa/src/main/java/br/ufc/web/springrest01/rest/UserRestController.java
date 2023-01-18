@@ -59,6 +59,18 @@ public class UserRestController {
         //return !result.isPresent() ? null : result.get();
     }
 
+    @GetMapping("/byMail/{mail}")
+    Iterable<UserAccount> getUserByMail(@PathVariable String mail){
+        Iterable<UserAccount> result = userRepository.findUsersExceptByMail(mail);
+        return result;
+    }
+
+    @GetMapping("/byUsername/{username}")
+    Iterable<UserAccount> getUserByUsername(@PathVariable String username){
+        Iterable<UserAccount> result = userRepository.findUsersByUsername(username);
+        return result;
+    }
+
     @GetMapping
     Iterable<UserAccount> getUsers(){
         Iterable<UserAccount> result = userRepository.findAll();

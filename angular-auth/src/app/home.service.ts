@@ -22,11 +22,17 @@ export class HomeService {
     return this.http.get<Object>(this.API_HOME_ME, {headers: headers});
   }
 
-  getUser(mail: string) : Observable<User> {
-    return this.http.get<User>(this.API_HOME_ME + '/' + mail);
-  }
 
   getUsers() : Observable<User> {
     return this.http.get<User>(this.API_HOME_ME);
+  }
+  getUser(mail: string) : Observable<User> {
+    return this.http.get<User>(this.API_HOME_ME + '/' + mail);
+  }
+  getUsersByMail(mail: string) : Observable<User> {
+    return this.http.get<User>(this.API_HOME_ME + '/byMail/' + mail);
+  }
+  getUsersByUsername(username: string) : Observable<User> {
+    return this.http.get<User>(this.API_HOME_ME + '/byUsername/' + username);
   }
 }

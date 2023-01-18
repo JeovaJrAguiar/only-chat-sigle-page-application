@@ -20,8 +20,9 @@ public interface UserRepository extends CrudRepository<UserAccount, Integer>{
     @Query(value = "select * from user_account where mail = :mail", nativeQuery = true)
     Optional<UserAccount> findUsersByMail(String mail);
 
-    //@Query("select * from UserAccount")
-    //ArrayList<UserAccount> findUserByMail();
+    @Query(value = "", nativeQuery = true)
+    ArrayList<UserAccount> findUsersExceptByMail(String mail);
 
-    //List<UserAccount> findAll();
+    @Query(value = "select * from user_account where username = :username", nativeQuery = true)
+    ArrayList<UserAccount> findUsersByUsername(String username);
 }
