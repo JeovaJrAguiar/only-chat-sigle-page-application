@@ -2,7 +2,6 @@
     <div class="w-50 m-auto">
         <h2 class="h3 mb-3 fw-normal">Register</h2>
 
-        <form class="needs-validation">
             <div class="row g-3">
                 <div class="col-sm-6">
                     <label for="firstName" class="form-label">First Name</label>
@@ -23,8 +22,9 @@
                 <div class="col-12">
                     <label for="gender" class="form-label">Gender</label>
                     <select [(ngModel)]="gender" name="gender" type="text" class="form-select" required>
-                        <option value="Male" selected>Male</option>
-                        <option value="Female">Female</option>
+                        <option value>Choose ... </option>
+                        <option>Male</option>
+                        <option>Female</option>
                     </select>
                 </div>
 
@@ -37,14 +37,12 @@
                     <input [(ngModel)]="confirmation" type="password" class="form-control" placeholder="" required>
                 </div>
 
-
                 <a style="color: red;">{{registerFailMessage}}</a><br>
                 <button (click)="register()" class="w-100 btn btn-lg btn-primary">Send</button>
 
-                <a class="" style="background-color: #e1e1e1; color: rgb(50, 50, 50); width: 100%!important; border-radius: 4px; padding: 10px auto 10px auto !important">
+                <a class="" style="background-color: rgb(50, 50, 50); color: #e1e1e1; width: 100%!important; border-radius: 4px; padding: 10px auto 10px auto !important">
                     {{messageReturn}}
                 </a>
             </div>
-        </form>
     </div>
 </main>

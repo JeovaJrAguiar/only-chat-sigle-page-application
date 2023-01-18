@@ -6,7 +6,7 @@ import { MinValidator } from '@angular/forms';
 import { User } from '../user';
 import { HomeService } from '../home.service';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { elementAt, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -60,14 +60,27 @@ export class HomeComponent implements OnInit {
   loadGridCards(userMail: string){
     this.homeService.getUsers().subscribe(result => {
       this.cards = this.cards.concat(result);
+
+      var index;
+      for (index = 0; index < this.cards.length; index++) {
+        if(this.cards[index].mail == userMail) return;
+      }
+  
+      this.cards = this.cards.splice(3, 1);
     });
+  }
+  loadGridCardsByUsername(userName: string){
+    this.homeService.getUsersByUsername(userName).subscribe(result => {
+      this.cards = [];
+      this.cards = this.cards.concat(result);
+    });
+  }
 
-    var index;
-    for (index = 0; index < this.cards.length; index++) {
-      if(this.cards[index].mail == userMail) return;
-    }
-
-    this.cards.splice(index, 1);
+  loadGridCardsByMail(userMail: string){
+    this.homeService.getUsersByMail(userMail).subscribe(result => {
+      this.cards = [];
+      this.cards = this.cards.concat(result);
+    });
   }
 
   getUser(){
@@ -86,9 +99,9 @@ export class HomeComponent implements OnInit {
 
   searchUserByNameOrMail(){
     if(this.nameOrMail.includes('@')){
-      // chama funcao de filtra pelo email
+      this.loadGridCardsByMail(this.nameOrMail);
     }else{
-      // chama funcao de filtra pelo nome
+      this.loadGridCardsByUsername(this.nameOrMail);
     }
   }
 
