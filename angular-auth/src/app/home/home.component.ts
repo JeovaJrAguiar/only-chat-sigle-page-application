@@ -98,10 +98,14 @@ export class HomeComponent implements OnInit {
   }
 
   searchUserByNameOrMail(){
-    if(this.nameOrMail.includes('@')){
-      this.loadGridCardsByMail(this.nameOrMail);
+    if(this.nameOrMail == '' || this.nameOrMail == ' '){
+      this.loadGridCards(this.userMail);
     }else{
-      this.loadGridCardsByUsername(this.nameOrMail);
+      if(this.nameOrMail.includes('@')){
+        this.loadGridCardsByMail(this.nameOrMail);
+      }else{
+        this.loadGridCardsByUsername(this.nameOrMail);
+      }
     }
   }
 
