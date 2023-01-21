@@ -58,15 +58,8 @@ export class HomeComponent implements OnInit {
   }
 
   loadGridCards(userMail: string){
-    this.homeService.getUsers().subscribe(result => {
+    this.homeService.getUserExceptMail(userMail).subscribe(result => {
       this.cards = this.cards.concat(result);
-
-      var index;
-      for (index = 0; index < this.cards.length; index++) {
-        if(this.cards[index].mail == userMail) return;
-      }
-  
-      this.cards = this.cards.splice(3, 1);
     });
   }
   loadGridCardsByUsername(userName: string){

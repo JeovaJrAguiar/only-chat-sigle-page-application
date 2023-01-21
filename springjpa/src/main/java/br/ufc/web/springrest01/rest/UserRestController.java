@@ -77,6 +77,14 @@ public class UserRestController {
         return result;
     }
 
+    @GetMapping("/users/{mail}")
+    Iterable<UserAccount> findUsersExceptByMail(@PathVariable String mail){
+        Iterable<UserAccount> result = userRepository.findUsersExceptByMail(mail);
+        return result;
+    }
+
+    
+
     /*
     @GetMapping("/{id}")
     UserAccount getUser(@PathVariable int id){
