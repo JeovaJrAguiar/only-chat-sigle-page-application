@@ -26,8 +26,6 @@ public class UserRestController {
 
     @GetMapping("/login/{mail}")
     Optional<UserAccount> login(@PathVariable("mail") String mail){
-        //UserAccount result = new UserAccount("admin", "admin", "admin", "admin@admin", "https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png");
-        
         return userRepository.findUsersByMail(mail);
     }
 
@@ -50,40 +48,28 @@ public class UserRestController {
 
     @GetMapping("/{mail}")
     Optional<UserAccount> getUser(@PathVariable String mail){
-        //UserAccount result = new UserAccount("admin", "admin", "admin", "admin@admin", "https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png");
-        
-        Optional<UserAccount> result = userRepository.findUsersByMail(mail);
-
-        return result;
-        //Optional<UserAccount> result =  userRepository.findUserByMail("admin@admin");
-        //return !result.isPresent() ? null : result.get();
+        return userRepository.findUsersByMail(mail);
     }
 
     @GetMapping("/byMail/{mail}")
     Iterable<UserAccount> getUserByMail(@PathVariable String mail){
-        Iterable<UserAccount> result = userRepository.findUsersExceptByMail(mail);
-        return result;
+        return userRepository.findUsersExceptByMail(mail);
     }
 
     @GetMapping("/byUsername/{username}")
     Iterable<UserAccount> getUserByUsername(@PathVariable String username){
-        Iterable<UserAccount> result = userRepository.findUsersByUsername(username);
-        return result;
+        return userRepository.findUsersByUsername(username);
     }
 
     @GetMapping
     Iterable<UserAccount> getUsers(){
-        Iterable<UserAccount> result = userRepository.findAll();
-        return result;
+        return userRepository.findAll();
     }
 
     @GetMapping("/users/{mail}")
     Iterable<UserAccount> findUsersExceptByMail(@PathVariable String mail){
-        Iterable<UserAccount> result = userRepository.findUsersExceptByMail(mail);
-        return result;
+        return userRepository.findUsersExceptByMail(mail);
     }
-
-    
 
     /*
     @GetMapping("/{id}")
