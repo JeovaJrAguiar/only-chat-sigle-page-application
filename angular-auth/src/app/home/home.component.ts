@@ -102,10 +102,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  chat(mailUserRem: String){
-    this.router.navigate(["/chat/"+ this.userMail + "/" + mailUserRem]);
+  chat(userRemMail: String){
+    this.router.navigate(["/chat/"+ this.userMail + "/" + userRemMail]);
   }
-  /*getUserByUsername(string username){
-    this.router.navigate(['/dashboard']);
-  }*/
 }

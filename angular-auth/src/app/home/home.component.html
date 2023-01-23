@@ -26,8 +26,8 @@
                                         height: 100%;">
                             
                             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                                <h3 (click)="chat('andre@gmail.com')" class="pt-5 mt-5 mb-4 display-8 lh-1 fw-bold h3-card-username">{{card.username}}</h3>
-                                <p (click)="chat('andre@gmail.com')" class="btn btn-outline btn-secondary">Start Chat</p>
+                                <h3 class="pt-5 mt-5 mb-4 display-8 lh-1 fw-bold h3-card-username">{{card.username}}</h3>
+                                <p (click)="chat('{{card.mail}}');" class="btn btn-outline btn-secondary">Start Chat</p>
                             </div>
                         </div>
                     </div>

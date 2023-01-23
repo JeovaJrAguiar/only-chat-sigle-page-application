@@ -46,7 +46,7 @@ export class ChatComponent implements OnInit {
 
 
     const mailUser = String(this.route.snapshot.paramMap.get('this.userMail'));
-    const mailUserRem = String(this.route.snapshot.paramMap.get('mailUserRem'));
+    const mailUserRem = String(this.route.snapshot.paramMap.get('userRemMail'));
 
     this.userName = mailUser;
 
