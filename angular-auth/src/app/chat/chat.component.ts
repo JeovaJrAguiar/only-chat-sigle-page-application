@@ -52,8 +52,8 @@ export class ChatComponent implements OnInit {
 
       this.userName = authData[0];
       this.userPhoto = authData[1];
-      const mailUser = String(this.route.snapshot.paramMap.get('this.userMail'));
-      const mailUserRem = String(this.route.snapshot.paramMap.get('userRemMail'));
+      const mailUser = String(this.route.snapshot.paramMap.get('mailUser'));
+      const mailUserRem = String(this.route.snapshot.paramMap.get('mailUserRem'));
 
       this.homeService.getUser(mailUserRem).subscribe(result => {
           this.usernameUserRem = result.username,
