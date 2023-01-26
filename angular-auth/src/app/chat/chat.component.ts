@@ -40,27 +40,33 @@ export class ChatComponent implements OnInit {
   }
 
   loadUserRem(){
-    // precisa carregar as informacoes de ambos os usuarios
     var result = this.localStorage.get('authorization');
+    if(result == null){
+      this.userMail = 'Authorization not found';
+      this.userPhoto = 'undefined';
 
+      this.router.navigate(['/login']);
+    }else{
+      const frase = result.toString();
+      const authData = frase.split(":");
 
+      this.userName = authData[0];
+      this.userPhoto = authData[1];
+      const mailUser = String(this.route.snapshot.paramMap.get('this.userMail'));
+      const mailUserRem = String(this.route.snapshot.paramMap.get('userRemMail'));
 
-    const mailUser = String(this.route.snapshot.paramMap.get('this.userMail'));
-    const mailUserRem = String(this.route.snapshot.paramMap.get('userRemMail'));
+      this.homeService.getUser(mailUserRem).subscribe(result => {
+          this.usernameUserRem = result.username,
+          this.mailUserRem = result.mail,
+          this.photoUserRem = result.photo
+      });
 
-    this.userName = mailUser;
-
-    this.homeService.getUser(mailUserRem).subscribe(result => {
-        this.usernameUserRem = result.username,
-        this.mailUserRem = result.mail,
-        this.photoUserRem = result.photo
-    });
-
-    this.homeService.getUser(mailUser).subscribe(result => {
-        this.userName = result.username,
-        this.userMail = result.mail,
-        this.userPhoto = result.photo
-    });
+      this.homeService.getUser(mailUser).subscribe(result => {
+          this.userName = result.username,
+          this.userMail = result.mail,
+          this.userPhoto = result.photo
+      });
+      }
   }
 
   sendMessage(){
