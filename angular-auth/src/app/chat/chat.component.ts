@@ -12,13 +12,13 @@ import { StorageService } from '../storage.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  userMail: String = "";
-  userName: String = "teste Aguiar";
+  userMail: string = "";
+  userName: string = "teste Aguiar";
   userPhoto: String = "";
   
-  usernameUserRem: String = "";
-  mailUserRem: String = "";
-  photoUserRem: String = "";
+  usernameUserRem: string = "";
+  mailUserRem: string = "";
+  photoUserRem: string = "";
 
   message: string = '';
   messages : Message[] = [
@@ -50,9 +50,7 @@ export class ChatComponent implements OnInit {
       const frase = result.toString();
       const authData = frase.split(":");
 
-      this.userName = authData[0];
-      this.userPhoto = authData[1];
-      const mailUser = String(this.route.snapshot.paramMap.get('mailUser'));
+      this.userMail = authData[0];
       const mailUserRem = String(this.route.snapshot.paramMap.get('mailUserRem'));
 
       this.homeService.getUser(mailUserRem).subscribe(result => {
@@ -60,13 +58,12 @@ export class ChatComponent implements OnInit {
           this.mailUserRem = result.mail,
           this.photoUserRem = result.photo
       });
-
-      this.homeService.getUser(mailUser).subscribe(result => {
-          this.userName = result.username,
-          this.userMail = result.mail,
-          this.userPhoto = result.photo
+      this.homeService.getUser(this.userMail).subscribe(result => {
+        this.userName = result.username,
+        this.userMail = result.mail,
+        this.userPhoto = result.photo
       });
-      }
+    }
   }
 
   sendMessage(){
