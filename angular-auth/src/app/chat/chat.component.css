@@ -1,0 +1,18 @@
+#div-rem-responsive {
+    margin-left: 5%;
+    margin-top: 5%;
+    border: solid 2px rgb(62, 62, 62);
+    width: 21%;
+    height: 20% !important;
+    background-color: rgb(62, 62, 62);
+    border-radius: 5px;
+
+    color: #fff;
+}
+
+#img-rem-responsive {
+    width: 100%;
+    height: 100%;
+    border: solid 3px rgb(62, 62, 62);
+    border-radius: 5px;
+}
