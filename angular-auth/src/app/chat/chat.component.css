@@ -7,6 +7,7 @@
     background-color: rgb(62, 62, 62);
     border-radius: 5px;
 
+    font-size: 85% !important;
     color: #fff;
 }
 
@@ -15,4 +16,45 @@
     height: 100%;
     border: solid 3px rgb(62, 62, 62);
     border-radius: 5px;
+}
+
+#div-messages {
+    float: right;
+    width: 80%;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+#div-box-send-message {
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+}
+
+
+#div-sented-messages {
+    width: 35%;
+    background-color: blueviolet;
+    align-items: flex-end;
+}
+.div-message-me {
+    text-align: right !important;
+    margin-left: 65%;
+    margin-bottom: 1%;
+}
+
+.div-message-rem {
+    text-align: left !important;
+    margin-left: 0%;
+    margin-bottom: 1%;
+}
+.div-box-message {
+    border: solid 1px rgb(62, 62, 62);
+    border-radius: 5px;
+    padding: 1%;
+
+    color: rgb(62, 62, 62);
+    font-size: 85% !important;
+
+    height: 50% !important;
 }

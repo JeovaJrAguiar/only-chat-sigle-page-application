@@ -22,8 +22,13 @@ export class ChatComponent implements OnInit {
 
   message: string = '';
   messages : Message[] = [
-    {content: 'opa patrao', date:'12/12/12', from: 'igor'},
-    {content: 'opa patrao', date:'12/12/12', from: 'eu'}
+    {content: 'opa patrao', date:'12/12/12', hour: '12:30', from: 'Gaby'},
+    {content: 'opa patrao', date:'12/12/12', hour: '17:11', from: 'Aguiar'},
+    {content: 'opa patrao', date:'13/12/12', hour: '2:12', from: 'Aguiar'},
+    {content: 'opa patrao', date:'13/12/12', hour: '2:14', from: 'Gaby'},
+    {content: 'opa patrao', date:'13/12/12', hour: '2:30', from: 'Aguiar '},
+    {content: 'opa patrao', date:'15/12/12', hour: '4:06', from: 'Aguiar'},
+    {content: 'opa patrao', date:'15/12/12', hour: '9:30', from: 'Gaby'}
   ];
 
   constructor(

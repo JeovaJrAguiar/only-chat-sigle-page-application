@@ -12,8 +12,8 @@
                 {{usernameUserRem}}
             </div>
         </div>
-        <div style="float: right;width: 80%; padding: 10px; margin-left: 20px;">
-            <div style="margin-top: 5%; width: 100%; display: flex;">
+        <div id="div-messages">
+            <div id="div-box-send-message">
                 <div style="border: solid 1px rgb(181, 181, 181); padding: 5px;">
                     Message: <input
                         style="border: solid 1px rgb(181, 181, 181); background-color: rgb(204, 204, 204);padding: 3px; width: 57%;"
@@ -23,19 +23,19 @@
                 </div>
             </div>
             <br><br>
-            <div>
-                <table>
-                    <tr>
-                        <td style="width: 70%;"><b>Message</b></td>
-                        <td style="width: 15%;"><b>Date</b></td>
-                        <td style="width: 15%;"><b>From</b></td>
-                    </tr>
-                    <tr *ngFor="let msg of messages">
-                        <td>{{msg.content}}</td>
-                        <td>{{msg.date}}</td>
-                        <td>{{msg.from}}</td>
-                    </tr>
-                </table>
+            <div id="div-sented-messages">
+                <div *ngFor="let msg of messages">
+                    <div *ngIf="msg.from == userName">
+                        <div class="div-box-message message-me">
+                            {{msg.content}}
+                        </div>
+                    </div>
+                    <div *ngIf="msg.from != userName">
+                        <div class="div-box-message message-rem">
+                            {{msg.content}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
