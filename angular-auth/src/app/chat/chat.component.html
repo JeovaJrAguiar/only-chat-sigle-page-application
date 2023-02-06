@@ -28,11 +28,13 @@
                     <div *ngIf="msg.from == userName">
                         <div class="div-box-message message-me">
                             {{msg.content}}
+                            <div class="div-text-hour ">{{msg.hour}}</div>
                         </div>
                     </div>
                     <div *ngIf="msg.from != userName">
                         <div class="div-box-message message-rem">
                             {{msg.content}}
+                            <div class="div-text-hour ">{{msg.hour}}</div>
                         </div>
                     </div>
                 </div>
