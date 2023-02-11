@@ -1,3 +1,4 @@
+<div style="margin-top: 120px !important;"></div>
     <div style="margin-right: 15%; float: right;">
         {{userName}}
         <img style="border-radius: 50px; margin-left: 5px; width: 30px;" src="{{userPhoto}}" id="--"/>
@@ -6,38 +7,31 @@
 
     <div style="display: flex; width: 60% !important; margin-top: 20px;" class="container px-1 py-1">
         <div id="div-rem-responsive">
-            <img id="img-rem-responsive"
-                src="{{photoUserRem}}"/>
+            <img id="img-rem-responsive" src="{{photoUserRem}}"/>
             <div style="padding: 3px;">
                 {{usernameUserRem}}
             </div>
         </div>
         <div id="div-messages">
-            <div id="div-box-send-message">
-                <div style="border: solid 1px rgb(181, 181, 181); padding: 5px;">
-                    Message: <input
-                        style="border: solid 1px rgb(181, 181, 181); background-color: rgb(204, 204, 204);padding: 3px; width: 57%;"
-                        placeholder="=)" />
-                    <img (click)="sendMessage()" style="margin-left: 5px; margin-bottom: -5px; width: 20px;"
-                        src="https://cdn-icons-png.flaticon.com/512/736/736212.png" id="--" />
-                </div>
-            </div>
-            <br><br>
             <div id="div-sented-messages">
                 <div *ngFor="let msg of messages">
                     <div *ngIf="msg.from == userName">
-                        <div class="div-box-message message-me">
+                        <div class="div-message-me div-box-message">
                             {{msg.content}}
                             <div class="div-text-hour ">{{msg.hour}}</div>
                         </div>
                     </div>
                     <div *ngIf="msg.from != userName">
-                        <div class="div-box-message message-rem">
+                        <div class="div-message-rem div-box-message">
                             {{msg.content}}
                             <div class="div-text-hour ">{{msg.hour}}</div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="div-box-send-message">
+                    <input id="input-box-message" placeholder="message ..." />
+                    <button type="button" (click)="sendMessage()" id="bnt-box-send">Send</button>
             </div>
         </div>
     </div>

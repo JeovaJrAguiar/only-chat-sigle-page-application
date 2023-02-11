@@ -1,3 +1,6 @@
+/* 
+    ============= image and user rem =============
+*/
 #div-rem-responsive {
     margin-left: 5%;
     margin-top: 5%;
@@ -18,6 +21,49 @@
     border-radius: 5px;
 }
 
+/* 
+    ============= box send message =============
+*/
+#div-box-send-message {
+    width: 100%;
+    height: 10%;
+    display: flex;
+
+    margin-top: 5px;
+    padding: 5px;
+
+    border: solid 1px rgb(62, 62, 62);
+    border-radius: 5px;
+    font-size: 70% !important;
+}
+
+#input-box-message {
+    width: 80%;
+    height: 100%;
+
+    border: solid 1px rgb(181, 181, 181);
+    background-color: rgb(204, 204, 204);
+    padding: 3px;
+    margin-right: 3px;
+}
+
+#bnt-box-send {
+    width: 20% !important;
+    height: 100% !important;
+    
+    margin-top: 0px !important;
+    margin-right: auto;
+    padding: 1px;
+
+    background-color: #0072f4 !important;
+    color: #fff;
+    font-size: 90%;
+}
+
+
+/* 
+    ============= sented messages =============
+*/
 #div-messages {
     float: right;
     width: 80%;
@@ -25,41 +71,37 @@
     margin-left: 20px;
 }
 
-#div-box-send-message {
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-}
-
-
 #div-sented-messages {
     width: 35%;
+    margin-top: 5%;
 }
-.div-message-me {
-    text-align: right !important;
-    margin-left: 65%;
 
-    align-items: end !important;
+.div-message-me {
+    text-align: end !important;
+    margin-left: 160%;
 }
 
 .div-message-rem {
     text-align: left !important;
-    margin-left: 0%;
 }
+
+
 .div-text-hour {
     font-size: 60% !important;
-    padding: 0px !important;
-    margin: 0px !important;
 }
+
 .div-box-message {
+    width: 125%;
+
     border: solid 1px rgb(62, 62, 62);
     border-radius: 5px;
-    padding: 2px;
-    margin-bottom: 2px;;
+    padding: 3px;
+    margin-bottom: 2px;
 
-    color: rgb(62, 62, 62);
-    font-size: 85% !important;
+    background-color: rgb(62, 62, 62);
+    color: #fff;
+    font-size: 80% !important;
 
     display: inline-table;
-    height: 50% !important;
+    word-break: break-all;
 }
